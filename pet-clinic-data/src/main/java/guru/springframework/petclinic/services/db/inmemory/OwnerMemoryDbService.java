@@ -2,10 +2,13 @@ package guru.springframework.petclinic.services.db.inmemory;
 
 import guru.springframework.petclinic.models.Owner;
 import guru.springframework.petclinic.services.CrudService;
+import guru.springframework.petclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class OwnerMemoryDbService extends PetClinicInMemoryDbService<Owner, Long> implements CrudService<Owner, Long> {
+@Service
+public class OwnerMemoryDbService extends PetClinicInMemoryDbService<Owner, Long> implements OwnerService {
 
     @Override
     public Owner save(Owner owner) {
@@ -30,5 +33,10 @@ public class OwnerMemoryDbService extends PetClinicInMemoryDbService<Owner, Long
     @Override
     public Owner findById(Long id) {
         return super.findById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }

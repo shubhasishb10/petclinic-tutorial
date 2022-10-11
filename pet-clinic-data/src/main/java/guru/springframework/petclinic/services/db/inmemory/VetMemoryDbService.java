@@ -2,10 +2,13 @@ package guru.springframework.petclinic.services.db.inmemory;
 
 import guru.springframework.petclinic.models.Vet;
 import guru.springframework.petclinic.services.CrudService;
+import guru.springframework.petclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class VetMemoryDbService extends PetClinicInMemoryDbService<Vet, Long> implements CrudService<Vet, Long> {
+@Service
+public class VetMemoryDbService extends PetClinicInMemoryDbService<Vet, Long> implements VetService {
 
     @Override
     public Vet save(Vet Vet) {
